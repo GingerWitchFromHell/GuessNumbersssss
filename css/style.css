@@ -1,0 +1,57 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hintergrund, Schrift */
+body {
+  background-color: #2B2B2B;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  text-align: center; 
+  min-height: 100vh;
+}
+
+header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.guess-container {
+  margin: 2rem 0;
+}
+
+#guessInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 150px;
+  text-align: center;
+}
+
+#guessButton,
+#startButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  background-color: #0099ff;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+#guessButton:hover,
+#startButton:hover {
+  background-color: #007acc;
+}
