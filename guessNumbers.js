@@ -7,8 +7,11 @@ const passOutput  = document.getElementById("passOutput");
 let randomNumber;
 let tries = 0;
 
-function startGame() {
+// Eingabe- und Rat-Button initial deaktivieren
+guessInput.disabled = true;
+guessButton.disabled = true;
 
+function startGame() {
   randomNumber = Math.floor(Math.random() * 101);
   tries = 0;
   console.log("Neue Zufallszahl:", randomNumber);
@@ -17,9 +20,19 @@ function startGame() {
   messageEl.textContent = "";
   passOutput.textContent = "";
   passOutput.style.display = "none";
+
+  // Eingabe- und Rat-Button freigeben
+  guessInput.disabled = false;
+  guessButton.disabled = false;
 }
 
 function checkGuess() {
+  // Falls das Spiel noch nicht gestartet wurde
+  if (typeof randomNumber !== 'number') {
+    messageEl.textContent = "Bitte starte zuerst das Spiel!";
+    return;
+  }
+
   const guess = parseInt(guessInput.value, 10);
   console.log("Eingegebener Tipp:", guess);
   console.log("Zufallszahl:", randomNumber);
@@ -40,6 +53,9 @@ function checkGuess() {
     messageEl.textContent = `Richtig! Du hast ${tries} Versuche gebraucht.`;
     passOutput.style.display = "block";
     passOutput.textContent = "Glückwunsch, du hast es geschafft!";
+    // Optional: Eingabe- und Rat-Button nach dem Gewinnen wieder deaktivieren
+    guessInput.disabled = true;
+    guessButton.disabled = true;
   }
 }
 

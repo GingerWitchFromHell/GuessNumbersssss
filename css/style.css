@@ -1,11 +1,9 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Hintergrund, Schrift */
 body {
   background-color: #2B2B2B;
   color: #fff;
